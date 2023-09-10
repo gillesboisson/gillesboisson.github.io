@@ -152,3 +152,21 @@
 	height: auto;
 	
 }
+
+.rounded-face{
+	border-radius: 50%;
+	max-width:300px;
+	display:inline-block;
+	overflow: hidden;
+	border:#FFF 10px solid;
+}
+
+/* media query max width 414px */
+
+@media (max-width: 414px) {
+	.rounded-face{
+		max-width: 150px;
+		border:#FFF 5px solid;
+
+	}
+}
