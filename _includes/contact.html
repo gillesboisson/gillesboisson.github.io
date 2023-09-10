@@ -32,8 +32,14 @@
 
                     <div class="clear mt-5"></div>
 
-                    <abbr title="Téléphone"><strong>Tél:</strong></abbr> {{ site.data.contact.phone }}<br>
                     <abbr title="Adresse email"><strong>Email:</strong></abbr> <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a>
+                    
+                    {% for sm in site.data.contact.social_media %}
+
+
+                    <br><abbr title="{{ sm.title }}"><strong>{{ sm.title }}:</strong></abbr> <a href="{{ sm.url }}">{{ sm.url }}</a>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
