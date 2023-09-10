@@ -1,0 +1,57 @@
+<footer id="footer" class="dark border-0">
+
+    <div class="container text-center">
+        <div class="footer-widgets-wrap">
+
+            <div class="row mx-auto">
+
+                <div class="col-md-6">
+
+                    <div class="widget">
+                        <h4>Sitemap</h4>
+                        
+                        <ul class="list-unstyled footer-site-links mb-0">
+                            {%- for link in site.data.navigation -%}
+                            <li><a href="#" data-scrollto="#{{ link.anchor }}" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">{{ link.title }}</a></li>
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="widget">
+                        <h4>Contact</h4>
+
+                        <p class="lead">
+                            {% for address in site.data.contact.headquarter_address %}
+                            {{ address }}<br>
+                            {% endfor %}
+
+                        </p>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            
+                            {% for sm in site.data.contact.social_media %}
+
+
+                            <a href="{{ sm.url }}" target="_blank" class="social-icon si-large bg-transparent h-bg-{{sm.icon}}" title="{{sm.title}}">
+                                <i class="fa-brands fa-{{sm.icon}}"></i>
+                                <i class="fa-brands fa-{{sm.icon}}"></i>
+                            </a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</footer><!-- #footer end -->

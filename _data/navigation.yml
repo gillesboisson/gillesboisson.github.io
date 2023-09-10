@@ -1,0 +1,14 @@
+- title: Home
+  anchor: "section-home"
+
+- title : A propos
+  anchor: section-about
+
+- title : Experience
+  anchor: section-experience
+
+- title : Portfolio
+  anchor: section-portfolio
+
+- title : Contact
+  anchor: section-contact

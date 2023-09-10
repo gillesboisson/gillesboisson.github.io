@@ -1,0 +1,48 @@
+<div id="section-portfolio" class="pt-0">
+
+    <div class="pt-6 pb-6" >
+        <div class="container">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h2 class="mb-0 fw-light ls-1">Portfolio</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Items
+    ============================================= -->
+    <div class="portfolio grid-container row g-0">
+        {% for project_slug in site.data.portfolio %}
+        {% assign project_index = forloop.index0 %}
+
+        {% for project_page in site.pages %}
+       
+        {% if project_page.slug == project_slug %}
+        <article class="portfolio-item col-md-4 col-sm-6 col-12 {{ project_page.css_class }}">
+            <div class="grid-inner">
+                <div class="portfolio-image">
+                    <a href="{{ project_page.permalink }}" class="modal-link">
+                        <img src="/assets/projects/{{ project_page.thumb_url }}" alt="{{ project_page.title }}">
+                    </a>
+                    <div class="bg-overlay modal-link" data-href="{{ project_page.permalink }}" data-anchor-hook="{{ project_page.slug }}">
+                        <div class="bg-overlay-content flex-column" data-hover-animate="fadeIn">
+                            <div class="portfolio-desc p-0 text-center" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                                <h3><a href="#">{{ project_page.title }}</a></h3>
+                                <span>{{ project_page.tags }}</span>
+                            </div>
+                        </div>
+                        <div class="bg-overlay-bg" data-hover-animate="fadeIn"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+
+
+        {% endfor %}
+
+
+        
+
+    </div><!-- #portfolio end -->
+</div>

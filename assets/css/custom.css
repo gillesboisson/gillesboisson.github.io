@@ -1,0 +1,139 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+@-webkit-keyframes fadeInUp {
+	from {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 70px, 0);
+	  transform: translate3d(0, 70px, 0);
+	}
+  }
+
+  @keyframes fadeInUp {
+	from {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 70px, 0);
+	  transform: translate3d(0, 70px, 0);
+	}
+  }
+
+  /* no border radius on modals */
+  /* body .modal{
+	  --bs-modal-inner-border-radius: 0;
+  } */
+
+
+  /* custom modal */
+
+  /* border less slider */
+  .modal-body > .slider-container {			
+	  margin-left: calc(-1 * var(--bs-modal-padding));
+	  margin-right: calc(-1 * var(--bs-modal-padding));
+  }
+
+  .modal-body .slider-element{
+	  padding-top: 0;
+
+  }
+
+  .modal-header {
+	  border-bottom-width: 0;
+	  
+  }
+
+  .modal-header > h4{
+	  font-size:2rem;
+  }
+
+  .modal-content h3{
+	  font-size:1rem;
+	  margin:2rem;
+	  text-align: right;
+	  font-style: italic;
+	  opacity: 0.9;
+  }
+
+
+  :root {
+	--cnvs-themecolor:	#d19213;
+	--cnvs-themecolor-rgb: 209, 146, 19;
+  }
+
+  :root{
+	--cnvs-contrast: #534d41;
+	--cnvs-contrast-rgb: 83, 77, 65;
+	--cnvs-header-transparent-border-color: rgba(var(--cnvs-contrast-rgb), 1);
+	--cnvs-primary-menu-font-size: 0.75rem;
+  }
+
+
+
+  .experience-item {
+	border-bottom: 1px solid #000;
+	border-bottom-color: rgba(var(--cnvs-contrast-rgb), 0.5);
+
+	padding:1rem 0;
+	margin: 0;
+  }
+
+
+
+  .experience-item *{
+	margin-top: 0;
+	margin-bottom: 0;
+  }
+
+  .experience-item > p{
+	margin-top:0.5rem;
+  }
+
+
+  .bg-overlay-bg {
+    --cnvs-bg-overlay-bg-opacity: 0.90;
+	--cnvs-invert-contrast: var(--cnvs-themecolor);
+	--cnvs-invert-contrast-rgb: var(--cnvs-themecolor-rgb);
+
+	* {
+		color:#FFF !important;
+	}
+    /* --cnvs-bg-overlay-bg: rgba(var(--cnvs-invert-contrast-rgb), var(--cnvs-bg-overlay-bg-opacity));
+    background-color: var(--cnvs-bg-overlay-bg); */
+}
+
+.bg-overlay .portfolio-desc h3 a, 
+.bg-overlay .portfolio-desc span {
+    color: #FFF !important;
+    text-shadow: none;
+}
+
+.bg-overlay .portfolio-desc h3{
+	margin:0;
+}
+
+.bg-overlay .portfolio-desc h3 a{
+	font-size:2rem;
+}
+.bg-overlay .portfolio-desc span{
+	font-size:1.1rem;
+	margin-top:1px;
+}
+
+#logo h1, #logo h1 strong {
+    /* line-height: 1.1rem; */
+    margin: 0 !important;
+    font-size: 1.5rem;
+}
+
+#footer .footer-widgets-wrap {
+	padding: 2rem;
+}
+
+#section-contact{
+	/* fix map zindex / menu overlay */
+	position: relative;
+    z-index: 0;
+}

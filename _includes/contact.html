@@ -1,0 +1,44 @@
+<div id="section-contact" class="pt-0">
+
+    <div class="row mx-0 align-items-stretch">
+        <div class="col-lg-6 d-none d-md-block px-0">
+            <div class="h-100 marker-map" data-coord="{{ site.data.contact.coords.lat}},{{ site.data.contact.coords.lng }}" ></div>
+
+
+        </div>
+        <div class="col-lg-6 col-md-6 bg-contrast-100">
+            <div class="col-padding">
+                <h3 class="font-body fw-normal ls-1">Contacter</h3>
+                <p>
+                    Je suis basé à Lyon, mais je travaille partout en France et à l'étranger.
+                </p>
+
+                <div style="font-size: 16px; line-height: 1.7;">
+                    <address style="line-height: 1.7;">
+                        <strong>Les bureaux:</strong><br>
+
+                        {% for address in site.data.contact.office_address %}
+                        {{ address }}<br>
+                        {% endfor %}
+
+                    </address>
+
+                    <div class="clear mt-4"></div>
+
+                    <address style="line-height: 1.7;">
+                        <strong>La société:</strong><br>
+                        {{ site.data.contact.company_name }}<br>
+                        {% for address in site.data.contact.headquarter_address %}
+                        {{ address }}<br>
+                        {% endfor %}
+                    </address>
+
+                    <div class="clear mt-5"></div>
+
+                    <abbr title="Téléphone"><strong>Tél:</strong></abbr> {{ site.data.contact.phone }}<br>
+                    <abbr title="Adresse email"><strong>Email:</strong></abbr> <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

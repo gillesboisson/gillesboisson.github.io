@@ -1,0 +1,17 @@
+<div class="section my-0" id="section-about">
+    <div class="container">
+        <div class="row mt-4 col-mb-50">
+        
+        {% for feature in site.data.features %}
+        <div class="col-lg-4" data-animate="fadeInUp" data-delay="{{ forloop.index }}00">
+            <i class="i-plain color i-large {{ feature.icon }} inline-block mb-3"></i>
+            <div class="heading-block border-bottom-0 mb-3">
+            <h4>{{ feature.title }}</h4>
+            </div>
+            <p>{{ feature.content }}</p>
+        </div>
+
+        {% endfor %}
+        </div>
+    </div>
+</div>

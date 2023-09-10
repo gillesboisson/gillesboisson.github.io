@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+
+<div class="container">
+    <div class="row">
+        <h2 class="content-title">{{ page.title }}</h2>
+
+        <section class="content-body">
+            <div class="slider-container">
+                <section id="slider" class="slider-element boxed-slider">
+                    <div class="fslider" data-animation="fade">
+                        <div class="flexslider">
+                            <div class="slider-wrap">
+                                {% for image in page.gallery %}
+
+                                <div class="slide" data-thumb="/assets/projects/{{ image }}">
+                                    <span  class="d-block position-relative">
+                                        <img src="/assets/projects/{{ image }}" alt="Slide {{ forloop.index }}">
+                                        <!-- <div class="bg-overlay">
+                                            <div class="bg-overlay-content justify-content-start align-items-end">
+                                                <div class="h3 fw-light py-2 px-3 bg-light text-dark ms-3 mb-3 rounded">Responsive Ready Design</div>
+                                            </div>
+                                        </div> -->
+                                    </span>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                    </div>
+                </section>
+            </div>
+
+            <h3>{{ page.tags }} </h3>
+
+           
+
+            {{ content }}
+            
+            {% if page.link %}
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <a href="{{ page.link }}" class="button button-rounded button-small text-white" target="_blank" style="background-color: #E25B45;">Visiter</a>
+            </div>
+            {% endif %}
+
+
+        </section><!-- #content end -->
+    </div>  
+</div>
+
+
+<script>
+    window.location  = '/#{{ page.slug }}'
+</script>

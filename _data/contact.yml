@@ -1,0 +1,36 @@
+
+title: Où sommes nous ?
+content: >
+  Nous sommes basé à Lyon, mais nous travaillons partout en France et à l'étranger.
+
+
+
+company_name: SARL Bomokai
+
+headquarter: La société
+
+headquarter_address: 
+  - 111 Avenue Jule Guesde 
+  - 69200 Vénissieux
+office_address: 
+  - 45 Rue de la bourse
+  - 69002 Lyon
+
+coords:
+  lat: 45.764250
+  lng: 4.836930
+
+phone: +33 (0)7 60 52 20 40
+
+email: hello@bomokai.com
+
+social_media:
+  - title: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/gilloubox/
+  - title: Github
+    icon: github
+    url: https://github.com/gillesboisson
+
+
+

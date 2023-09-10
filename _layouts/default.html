@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+	<meta name="author" content="Gilles Boisson" />
+	<meta name="description" content="{{ page.meta_description }}" />
+	<meta name="keywords" content="{{ site.meta_core_keywords }},{{ page.meta_keywords }}" />
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="/assets/style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="/assets/css/font-icons.css">
+	<link rel="stylesheet" href="/assets/one-page/css/et-line.css">
+
+	<!-- One Page Module Specific Stylesheet -->
+	<link rel="stylesheet" href="/assets/one-page/onepage.css">
+
+
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="/assets/css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="/assets/leaflet/leaflet.css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title> {{ site.title }} 
+	{% if page.page_title %}
+	 | {{ page.page_title }}
+	{% endif %}
+
+	</title>
+</head>
+
+<body class="stretched side-push-panel">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+		{% include header.html %}
+		
+        {{ content }}
+
+		{% include footer.html %}
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<!-- Modal -->
+	{% include modal.html %}
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/assets/js/plugins.min.js"></script>
+	<script src="/assets/js/functions.bundle.js"></script>
+
+	<!-- Leaflet -->
+	<script src="/assets/leaflet/leaflet.js"></script>
+	<script>
+		// MAP
+		var maps = document.getElementsByClassName('marker-map')
+		if(maps.length > 0){
+			mapDom = maps[0];
+			coords = mapDom.dataset.coord.split(',')
+			
+			map = L.map(mapDom);
+
+			// set openstreetmap tiles
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+			// center map and add a marker to coords
+			map.setView([coords[0], coords[1]], 13);
+			L.marker([coords[0], coords[1]]).addTo(map);
+			
+		}
+		(function($){
+			// Porfolio
+			window.addEventListener('DOMContentLoaded', function(){
+				// console.log('$(".modal-link")',$(".modal-link"));
+
+				// Modal handling
+
+				var modal = $(".modal");
+
+
+				$(".modal-link").click(function(e){
+					e.preventDefault();
+					// console.log('e',e);
+					var href = $(this).attr('data-href') || $(this).attr('href');
+					$.get(href, function(data){
+						var content = $(data);
+						var modalTitle = $('.content-title', content).html()
+						var modalBody = $('.content-body', content).html()
+
+
+
+						// $(".modal .modal-body").html($('.content-body', content).html());
+						// $(".modal").modal('show');
+
+						$('.modal-title', modal).html(modalTitle);
+						$('.modal-body', modal).html(modalBody);
+
+						
+						setTimeout(function() {
+							CNVS.FlexSlider.init(modal);
+						},300)
+
+						modal.modal('show');
+
+					});
+					
+				});
+
+				
+				// trigger remote modal from url hash
+				var hash = window.location.hash;
+
+				if(hash){
+					// console.log('hash',hash);
+					// console.log('hash',hash.substring(1));
+					var anchor = hash.substring(1);
+					var modalLink = $('.modal-link[data-anchor-hook="'+anchor+'"]');
+					// console.log('modalLink',modalLink);
+					modalLink.trigger('click');
+				}
+			})
+
+			
+		})(jQuery)
+		
+	</script>
+</body>
+</html>
