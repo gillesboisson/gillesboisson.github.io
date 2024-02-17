@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+	<meta name="author" content="Gilles Boisson" />
+	<meta name="description" content="{{ page.meta_description }}" />
+	<meta name="keywords" content="{{ site.meta_core_keywords }},{{ page.meta_keywords }}" />
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="/assets/style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="/assets/css/font-icons.css">
+	<link rel="stylesheet" href="/assets/one-page/css/et-line.css">
+
+	<!-- One Page Module Specific Stylesheet -->
+	<link rel="stylesheet" href="/assets/one-page/onepage.css">
+
+
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="/assets/css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="/assets/leaflet/leaflet.css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title> Light bake
+
+	</title>
+</head>
+
+<body class="stretched side-push-panel">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+		
+		
+		<header id="header" class="full-header transparent-header border-full-header header-size-custom" data-sticky-shrink="false">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+		
+						<!-- Logo
+						============================================= -->
+						<div id="logo">
+							<a href="index.html">
+								<h1 class="text-uppercase text-black-50 fw-light mb-2 fadeInUp animated" data-animate="fadeInUp" data-delay="100">Light <strong>bake</strong> - <span style="text-transform: lowercase;">Light baking simplified</span>								</h1>
+							</a>
+						</div><!-- #logo end -->
+		
+						<div class="primary-menu-trigger">
+							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+							</button>
+						</div>
+		
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
+		
+							<ul class="one-page-menu menu-container" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+								<li class="menu-item {% if page.section=='lightbake' %} current{% endif %}" >
+									<a href="/light-bake/" class="menu-link"><div>Home</div></a>
+									
+								</li>
+								<li class="menu-item {% if page.section=='lightbake-faq' %} current{% endif %}"">
+									<a href="/light-bake/faq" class="menu-link"><div>FAQ</div></a>
+									
+									
+								</li>
+								<li class="menu-item {% if page.section=='lightbake-doc' %} current{% endif %}"">
+									<a href="/light-bake/doc" class="menu-link"><div>Documentation</div></a>
+									
+								</li>
+		
+							</ul>
+		
+						</nav><!-- #primary-menu end -->
+		
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-lg-12 fadeInUp animated" data-animate="fadeInUp">
+                    
+    
+                    {{ content }}
+                    
+                    
+                </div>
+            </div>
+    
+    
+        </div>
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/assets/js/plugins.min.js"></script>
+	<script src="/assets/js/functions.bundle.js"></script>
+
+	<!-- Leaflet -->
+	<script src="/assets/leaflet/leaflet.js"></script>
+</body>
+</html>
